@@ -17,7 +17,7 @@ public class ArrayList {
         List<LanguagePrograms> DB = DataUtils.loadList();
         System.out.println("Press 0 and Enter to start");
         operator = scannerOperation.nextInt();
-
+        //Esto funciona
 
         while (options.equals(0)) {
             System.out.println("Choose from this list: \n1 = Add\n2 = Remove Index\n3 = Remove Language\n4 = Remove Type\n5 = Remove Letter");
