@@ -1,12 +1,10 @@
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class ArrayList {
 
     public static void main(String[] args) {
-        String  language = "", languageType = "",type = "";
+        String  language, languageType,type;
         Integer index, operator;
         Integer options = 0;
 
@@ -31,14 +29,14 @@ public class ArrayList {
                 languageType = scannerLanguageType.next();
                 LanguagePrograms newLan = new LanguagePrograms(language, languageType);
                 DB.add(newLan);
-                DB.stream().forEach(System.out::println);
+                DB.forEach(System.out::println);
 
                 //Remove by index
-            } else if (operator.equals(2 )){
+            } else if (operator.equals(2)){
                 System.out.println("What number of the list do you want remove?");
                 index = scannerIndex.nextInt();
-                DB.remove(index.intValue());
-                DB.stream().forEach(System.out::println);
+                DB.remove((int) index);
+                DB.forEach(System.out::println);
 
                 //Remove by Language
             } else if (operator.equals(3)) {
