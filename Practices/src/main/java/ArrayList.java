@@ -63,6 +63,7 @@ public class ArrayList {
                 String finalType = type;
                 DB.stream().filter(LanguagePrograms -> !LanguagePrograms.getLanguage().contains(finalType))
                         .forEach(System.out::println);
+
             } else {
                 System.out.println("no operation selected");
             }
