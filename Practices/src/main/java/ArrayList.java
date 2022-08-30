@@ -1,5 +1,7 @@
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class ArrayList {
 
@@ -57,17 +59,18 @@ public class ArrayList {
 
                 //Remove by Letter
             } else if (operator.equals(5)) {
-                System.out.println("What  of the list do you want remove?");
                 System.out.println("Define the letter to remove language: ");
                 type = scannerLetter.next();
                 String finalType = type;
+                DB.stream().filter(LanguagePrograms -> LanguagePrograms.getLanguage().charAt(finalType));
+                                DB.forEach(System.out::println);
                 ///Falta realizar esta [ultima operacion
 
             } else {
                 System.out.println("no operation selected");
             }
 
-            System.out.println("Do you want to continue? \n 0:Continue \n 9:Exit");
+            System.out.println("Do you want to continue? \n0:Continue \n9:Exit");
             options = scannerOptions.nextInt();
         }
     }
