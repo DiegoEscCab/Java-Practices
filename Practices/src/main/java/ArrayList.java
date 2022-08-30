@@ -50,7 +50,6 @@ public class ArrayList {
 
                 //Remove by Type
             } else if (operator.equals(4)) {
-                System.out.println("What  of the list do you want remove?");
                 System.out.println("Define the type to remove language: ");
                 languageType = scannerLanguageType.next();
                 String finalLanguageType = languageType;
@@ -62,10 +61,8 @@ public class ArrayList {
                 System.out.println("Define the letter to remove language: ");
                 type = scannerLetter.next();
                 String finalType = type;
-                DB.stream().filter(LanguagePrograms -> LanguagePrograms.getLanguage().charAt(finalType));
-                                DB.forEach(System.out::println);
-                ///Falta realizar esta [ultima operacion
-
+                DB.stream().filter(LanguagePrograms -> !LanguagePrograms.getLanguage().contains(finalType))
+                        .forEach(System.out::println);
             } else {
                 System.out.println("no operation selected");
             }
