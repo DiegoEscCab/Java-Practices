@@ -1,12 +1,10 @@
 import java.util.List;
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class ArrayList {
 
     public static void main(String[] args) {
-        String  language, languageType,type;
+        String language, languageType, type;
         Integer index, operator;
         Integer options = 0;
 
@@ -18,8 +16,8 @@ public class ArrayList {
         Scanner scannerLetter = new Scanner(System.in);
         List<LanguagePrograms> DB = DataUtils.loadList();
         System.out.println("Press 0 and Enter to start");
-        operator = scannerOperation.nextInt();
-        //Esto funciona
+        scannerOperation.nextInt();
+
 
         while (options.equals(0)) {
             System.out.println("Choose from this list: \n1 = Add\n2 = Remove Index\n3 = Remove Language\n4 = Remove Type\n5 = Remove Letter");
@@ -34,7 +32,7 @@ public class ArrayList {
                 DB.forEach(System.out::println);
 
                 //Remove by index
-            } else if (operator.equals(2)){
+            } else if (operator.equals(2)) {
                 System.out.println("What number of the list do you want remove?");
                 index = scannerIndex.nextInt();
                 DB.remove((int) index);
@@ -66,21 +64,9 @@ public class ArrayList {
             } else {
                 System.out.println("no operation selected");
             }
-
             System.out.println("Do you want to continue? \n0:Continue \n9:Exit");
             options = scannerOptions.nextInt();
         }
     }
+}
 
-
-
-
-        }
-
-
-      /* DB.stream()
-                .filter(LanguagePrograms -> !LanguagePrograms.getType().equalsIgnoreCase("Scripting"))
-                .forEach(System.out::println);
-
-      /*
-      */
